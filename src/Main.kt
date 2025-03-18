@@ -7,14 +7,14 @@
  * GitHub Repo:    https://github.com/waimea-wmbutler/level-2-programming-assessment
  * ---------------------------------------------------------------------
  * Notes:
- * This is an adventure game where a certain thing will happen with each diffrent choice.
- * like a dungeon in a door-door format
+ * This is an adventure game where a certain thing will happen with each different choice.
+ * like a dungeon in a door-door format. Two players will play separately and match scores
  * =====================================================================
  */
 
 
 
 fun main() {
-    println("Hello World!")
+
 }
 

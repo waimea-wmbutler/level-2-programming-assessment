@@ -29,8 +29,7 @@ The project is written in the [Kotlin](https://kotlinlang.org) programming langu
 Games that allow players to progress through a world of some kind, facing challenges and performing actions to overcome them...
 - Items could be collected
 - Battles could be won
-This is an adventure game where a certain thing will happen with each diffrent choice.
+- This is an adventure game where a certain thing will happen with each diffrent choice.
 like a dungeon in a door-door format
-
-
+- 
 
