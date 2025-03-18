@@ -2,12 +2,13 @@
  * =====================================================================
  * Programming Project for NCEA Level 2, Standard 91896
  * ---------------------------------------------------------------------
- * Project Name:   PROJECT NAME HERE
- * Project Author: PROJECT AUTHOR HERE
- * GitHub Repo:    GITHUB REPO URL HERE
+ * Project Name:   TO THE CENTER
+ * Project Author: William Butler
+ * GitHub Repo:    https://github.com/waimea-wmbutler/level-2-programming-assessment
  * ---------------------------------------------------------------------
  * Notes:
- * PROJECT NOTES HERE
+ * This is an adventure game where a certain thing will happen with each diffrent choice.
+ * like a dungeon in a door-door format
  * =====================================================================
  */
 
