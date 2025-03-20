@@ -1,7 +1,3 @@
-private infix fun String.or(s: String): Any {
-    return 0
-}
-
 /**
  * =====================================================================
  * Programming Project for NCEA Level 2, Standard 91896
@@ -12,7 +8,8 @@ private infix fun String.or(s: String): Any {
  * ---------------------------------------------------------------------
  * Notes:
  * This is an adventure game where a certain thing will happen with each different choice.
- * like a dungeon in a door-door format. Two players will play separately and match coins and dungeon level
+ * like a dungeon in a door-door format. Two players will play separately and match coins and dungeon level.
+ * Highest coin count and level wins.
  * =====================================================================
  */
 
@@ -24,9 +21,9 @@ private infix fun String.or(s: String): Any {
 
 const val LEFT = 'L'
 const val RIGHT = 'R'
-var count = 0
-
-val roomType= ("This Room is Empty")
+var countCoin = 0
+var countLevel =0
+val roomType = (1..10).random()
 
 
 
@@ -48,14 +45,18 @@ fun main () {
     }
 
     when (firstDoor) {
-        'R' -> {
-            println("$roomType")
+        RIGHT -> {
+            if (roomType == 1) {
+                println("$roomType")
+            }
         }
-        'L' -> {
-            println("$roomType")
+        LEFT -> {
+            if (roomType == 6 || roomType == 4 ){
+                println("")
+            }
         }
     }
-
+println("$roomType")
 }
 
 fun getLeftOrRight (prompt: String): Char {
@@ -67,8 +68,21 @@ fun getLeftOrRight (prompt: String): Char {
     }
     return userInput.uppercase().first()
 }
-fun roomToInt (): String {
-    roomType.toInt(1..10)
-    return roomType
+
+fun typeToPrompt () {
+    while (true){
+        roomType.toString()
+        "1" == "You Found 5 Coins!"
+        "2" == "The Room Is Empty!"
+        "3" == "Ahh! A Goblin! He Stole 3 Coins!"
+        "4" == "The Floor Opens Below You To Reveal A Lava Pit! This Is The End For You Adventurer"
+        "5" == "This Room Is Filled With Furniture And Antiques, Gain 10 Coins"
+        "6" == ""
+        "7" == ""
+        "8" == ""
+        "9" == ""
+        "10" == ""
+
+    }
 }
 
