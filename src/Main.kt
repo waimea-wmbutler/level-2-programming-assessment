@@ -28,7 +28,7 @@ var countStuff = 1
 // The Amount Of Relics you Find
 var countRelic = 0
 // How Many Other Adventurers The Find
-var countFreind = 0
+var countFriend = 0
 
 fun main () {
 
@@ -72,12 +72,12 @@ fun main () {
         when (door) { // After Getting The Option From The Player, Following These Rules To Show Inside The Room
 
             RIGHT -> {
-                Thread.sleep(500)
+                Thread.sleep(750)
                 println (roomType[roomNum] )
                 Thread.sleep(500)
             }
             LEFT -> {
-                Thread.sleep(500)
+                Thread.sleep(750)
                 println ( roomType[roomNum] )
                 Thread.sleep(500)
             }
@@ -92,8 +92,8 @@ fun main () {
             2 -> countCoin -= 10
             3 -> break
             4 -> countStuff += 5
-            5 -> if (countCoin >= 0){ countCoin == 0 }
-                else { continue }
+            5 -> if (countCoin >= 0){ countCoin = 0 }
+                 else {continue}
             6 -> continue
             7 -> countCoin -=3
             8 -> break
@@ -105,12 +105,21 @@ fun main () {
             14 -> continue
             15 -> countStuff *= 2
             16 -> countCoin += 50
-            17 -> countFreind ++
+            17 -> countFriend ++
             18 -> {
-                countStuff /= 2
-                countCoin += 10
+                    if (countStuff >= 4) {
+                        countStuff -= 4
+                        countCoin += 10
+                    }
+                    if (countRelic >= 2 ){
+                        countRelic -= 2
+                        countCoin += 10
+                    }
+                    else{
+                    continue
+                    }
             }
-            19 -> continue
+            19 -> countFriend -= 1
             20 -> countCoin += 5
 
 
@@ -119,23 +128,42 @@ fun main () {
     }
         // Game End! This Only Happens If The Adventurer Has Died. And As Such, Displays The Scores
     println()
+    println()
+    Thread.sleep(1000)
     println("Congrats Adventurer! ")
+    Thread.sleep(1000)
     println()
     println("You Have Finished My Game!")
+    Thread.sleep(1000)
     println()
-    println("Your Coin Count Was: $countCoin,\nYour Level Was: $countLevel,\nYou Had A Total Of $countStuff Stuff,\nYou Found $countRelic Relics\nAnd You Made $countFreind Freinds!")
-    println()
-    if (countCoin <= 0 ) {
-        println("Ahh! Debt! A Dungeoneer's Worst Nightmare! Better Sell Your Relics And Items!")
+    println("Your Coin Count Was: $countCoin,")
+    Thread.sleep(1000)
+    println("Your Level Was: $countLevel,")
+    Thread.sleep(1000)
+    println("You Had A Total Of $countStuff Stuff,")
+    Thread.sleep(1000)
+    println("You Found $countRelic Relics")
+    Thread.sleep(1000)
+    println("And You Made $countFriend Friends!")
+    Thread.sleep(1500)
+
+    if (countCoin < 0 ) {
+        Thread.sleep(1000)
+        println("Ahh! Debt! A Dungeoneer's Worst Nightmare! \nBetter Sell Your Relics And Items!")
     }
 }
 // Getting A Left Or Right From The Player
 fun getLeftOrRight(): Char {
     var userInput: String
+
+
     while (true){
         userInput = readln()
-        if (userInput.isNotBlank()) break
+        if (userInput.isNotBlank() ) {
+            break
+        }
     }
+
     return userInput.uppercase().first()
 
 }
