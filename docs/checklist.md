@@ -49,7 +49,7 @@ The program has been tested and there is documented evidence that:
   - [x] players winning
   - [x] final feedback (if appropriate)
 - [x] **Valid (expected) data** has been used to test **all data inputs**
-- [x] Where tests have failed, **fixes** are discussed and **tests re-run**
+- [ ] Where tests have failed, **fixes** are discussed and **tests re-run**
 
 
 ---
