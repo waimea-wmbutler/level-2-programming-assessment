@@ -9,7 +9,7 @@
  * ---------------------------------------------------------------------
  * Notes:
  * This is an adventure game where a certain thing will happen with each different choice.
- * like a dungeon in a door-door format. Two players will play separately and match coins and dungeon level.
+ * like a dungeon in a door-door format. Two players will play separately and match points, made by; coins, level ect.
  * Highest points wins.
  * Yes I Used ChatGPT To **Help** Me, Not To Do It For Me
  * =====================================================================
@@ -64,7 +64,10 @@ fun main () {
         "The Room Is Pitch Black! What Will You Do?!?\n",
         "Whoa! A Cool Robe! Better Grab That! Gain 1 Magic!",
         "The Dungeon Calls You Further in..\n You Black Out!\nYou Seem To Have Travelled 3 Levels?!?",
-        "There Is A Cry In The Room Ahead! Go Investigate!")
+        "There Is A Cry In The Room Ahead! Go Investigate!",
+        "Arrows Fly From The Wall! \nThis Is The End For You Adventurer!",
+        "Looks Like An Old Wizard Hideout! Gain Some Leftover Knowledge!")
+
 
 
     intro() // Intro To The Game
@@ -120,7 +123,7 @@ fun main () {
                 }
             }
             countLevel++
-            // Check roomNum To See What Has Happened
+            // Check roomNum (Random Number) To See What Has Happened
             when (roomNum) {
                 0 -> countCoin += 5
                 1 -> continue
@@ -132,7 +135,7 @@ fun main () {
                     countCoin -= 10
                 }
 
-                3 -> countLevel++
+                3 -> break
                 4 -> countItem += 5
                 5 -> if (countMagic >= 3) {
                     println("You Can Magic Him Away! Gain His Coins!")
@@ -151,7 +154,7 @@ fun main () {
 
                 6 -> continue
                 7 -> countCoin -= 3
-                8 -> countLevel ++
+                8 -> break
                 9 -> countCoin += 8
                 10 -> countMagic += 5
                 11 -> countMagic += 2
@@ -190,6 +193,8 @@ fun main () {
                 21 -> countMagic += 1
                 22 -> countLevel += 2
                 23 -> countLevel += 1
+                24 -> break
+                25 -> countMagic += 3
             }
             // If The Player Reaches Level 50, A Special Dragon Event Will Appear!
             if (countLevel >= 50 && !hasTriggeredLevel50Event) {
@@ -202,8 +207,7 @@ fun main () {
                 println("You've Reached Level 50! A Massive Chamber Opens Before You.")
                 Thread.sleep(1000)
 
-                val eventType = (1..4).random() // 1 = fight, 2 = befriend, 3 = sneak, 4 = steal
-
+                val eventType = (1..4).random() // 1 = Fight, 2 = Befriend, 3 = Sneak, 4 = Steal
                 when (eventType) {
                     1 -> { // FIGHT THE DRAGON
                         println("A Dragon Appears And Screeches! It Looks Angry. Do You Fight?!")
@@ -223,7 +227,7 @@ fun main () {
                     }
 
                     2 -> { // BEFRIEND THE DRAGON
-                        println("The dragon is curious about you. It doesn’t attack...")
+                        println("A Dragon Seems Curious About You. It Doesn’t attack...")
                         Thread.sleep(1000)
                         if (countRelic >= 10 || countFriend >= 3) {
                             println("You Show Your Relics And Talk With It. You Gain A Powerful Ally!")
@@ -262,8 +266,8 @@ fun main () {
                             countItem += 3
                         } else {
                             println("You Trip A Trap! The Dragon Catches You, And You Barely Make It Out.")
-                            countCoin = (countCoin - 20)
-                            countRelic = (countRelic - 2)
+                            countCoin = (countCoin - 50)
+                            countRelic = (countRelic / 2)
                             Thread.sleep(1000)
                         }
                     }
@@ -271,13 +275,13 @@ fun main () {
                 Thread.sleep(1000)
                 println("You Survived The Dragon's Lair... For Now.")
                 Thread.sleep(1000)
-                if (countMagic >= 20) {
-                    println("The Surface Is Just Ahead, Its Time To Leave")
-                }
+                println("The Surface Is Just Ahead, Its Time To Leave")
                 break
             }
+            if (countLevel >= 51){
+                break
         }
-
+        }
         // Game End! This Only Happens If The Adventurer Has Died. And As Such, Displays The Scores Gained During The Play through
         // It Also Shows The Players Score, And Then Re-sets The Game So That The Second Player Can Go Through
         println()
@@ -318,7 +322,6 @@ fun main () {
             println("Your Score Was: $prevPlayerValues2!")
             Thread.sleep(1000)
             println("Thanks For Playing $playerName2!")
-
         }
         if (countPlayers <= 1) {
             savePlayerData1()
@@ -330,7 +333,6 @@ fun main () {
             Thread.sleep(1000)
             println("Resetting...")
             Thread.sleep(1000)
-
             countCoin = 0
             countItem = 0
             countFriend = 0
@@ -359,7 +361,6 @@ fun main () {
     //Lore Hint. Unrelated But Thought It Was Cool For An Easter Egg
     println("̴Y̷o̸u̷ ̵w̵e̸r̷e̷ ̴n̵e̸v̴e̵r̸ ̸m̵e̷a̵n̸t̶ ̶t̵o̵ ̸r̷e̷a̸c̶h̵ ̶t̵h̶e̵ ̷c̷e̵n̵t̷e̵r̵.̸ ̵Y̶o̶u̴ ̷w̷e̸r̶e̵ ̵t̸h̶e̸ ̴c̶e̶n̶t̷e̷r̵’̴s̷ ̴d̴r̷e̴a̶m̶.̸")
 }
-
 // Functions To Find The PlayerInput, Save Player data, ect.
 // Getting A Left Or Right From The Player
 fun getLeftOrRight(): Char {
@@ -403,7 +404,7 @@ fun showCheatMenu() {
     }
     println("✅ Value updated! Returning to game...\n Left Or Right?")
 }
-//Function To Get Int So Previous Functions Work
+//Function To Get Int So Previous Functions Work. This Function Includes A Parameter (Prompt) To Set What's Happening Inside
 fun getInt(prompt: String): Int {
     while (true) {
         println(prompt)

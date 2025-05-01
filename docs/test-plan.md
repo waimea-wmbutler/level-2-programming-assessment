@@ -12,11 +12,11 @@ Terminology:
 
 ## Test 1: Invalid Input
 
-    To get the results i needed, i had to get a valid input. it would display a number after asking the player for a prompt.
+    To get the results I needed, I had to get a valid input. it would display a number after asking the player for a prompt.
 
 ### Test Data To Use
 
-    The test data was ASD and left. i selected these so that when i tested the code, i could test for non left or right answers. also i used right similar answers in 
+    The test data was ASD and left. I selected these so that when i tested the code, i could test for non left or right answers. also i used right similar answers in 
 
 ### Expected Test Result
 
@@ -30,11 +30,11 @@ Terminology:
 
 ### Test Data To Use
 
-    To test this theory, i had to play my game for as long as possible, however it is always a random number. i Achieved this by commenting out the dangerous options, leading to only peasefull dungeonering.
+    To test this theory, I had to play my game for as long as possible, however it is always a random number. I Achieved this by commenting out the dangerous options, leading to only peasefull dungeonering.
 
 ### Expected Test Result
 
-    I expected the game to go on forever, so i tested weather that was true or not.
+    I expected the game to go on forever, so I tested weather that was true or not.
 ![Screen Recording 2025-04-29 at 12.56.15 PM.gif](screenshots/Screen%20Recording%202025-04-29%20at%2012.56.15%20PM.gif)
 
 ---
@@ -52,5 +52,7 @@ Terminology:
     When the player enters all the values in 'sudo enter', it should add those intergers, but if they go past lvl 50 it should go to the LVL 50 event and then end the code.
     I found when i was testing this that if i did under 100 levels, it would work, and the level would play and then end the adventre, however, when i did 100 or more it had a problem with going over the level 50 event.
 ![Screen Recording 2025-04-29 at 3.02.38 PM.gif](screenshots/Screen%20Recording%202025-04-29%20at%203.02.38%20PM.gif)
+    All I had to do to fix it was add a little extra bit saying that if the level is 51 or higher, it would end the game
+
 
 ---

@@ -49,7 +49,7 @@ The program has been tested and there is documented evidence that:
   - [x] players winning
   - [x] final feedback (if appropriate)
 - [x] **Valid (expected) data** has been used to test **all data inputs**
-- [ ] Where tests have failed, **fixes** are discussed and **tests re-run**
+- [x] Where tests have failed, **fixes** are discussed and **tests re-run**
 
 
 ---
@@ -77,7 +77,7 @@ The program code is well-commented:
 - [x] Comments accurately describe the **function and behaviour** of the code:
   - [x] Defining the **purpose** of functions / key blocks of code
   - [x] Explaining the **reason** (the '**why**') of key parts of the code
-  - [ ] Defining function **parameters** and/or **return values**
+  - [x] Defining function **parameters** and/or **return values**
 
 ### Program Testing
 

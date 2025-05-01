@@ -10,9 +10,6 @@ The project is written in the [Kotlin](https://kotlinlang.org) programming langu
 - Modifying data stored in collections
 - Creating functions that use parameters and/or return values
 - Using non-trivial string manipulation
-- Using additional non-core libraries
-
-
 
 ---
 
@@ -30,5 +27,6 @@ The project is written in the [Kotlin](https://kotlinlang.org) programming langu
 Like a dungeon in a door-door format
 - The Doors Contain a new type of room, each with a unique challenge or feature
 - Some Contain Enemies and some contain Rewards!
+- An event comes in at level 50 leading to riches or poverty.
 
 
